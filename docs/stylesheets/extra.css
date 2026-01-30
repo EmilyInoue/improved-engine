@@ -1,0 +1,257 @@
+/* Custom styles for improved-engine blog */
+
+/* Root variables for gradient colors */
+:root {
+  --gradient-start: #667eea;
+  --gradient-end: #764ba2;
+  --gradient-accent: #f093fb;
+  --hero-overlay: rgba(102, 126, 234, 0.15);
+}
+
+[data-md-color-scheme="slate"] {
+  --gradient-start: #667eea;
+  --gradient-end: #764ba2;
+  --gradient-accent: #f093fb;
+  --hero-overlay: rgba(102, 126, 234, 0.25);
+}
+
+/* Hero image container */
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin: -2rem -2rem 2rem -2rem;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+@media screen and (max-width: 76.1875em) {
+  .hero-container {
+    margin: -1.6rem -1.6rem 2rem -1.6rem;
+  }
+}
+
+@media screen and (max-width: 60em) {
+  .hero-container {
+    height: 300px;
+    margin: -1.2rem -1.2rem 1.5rem -1.2rem;
+  }
+}
+
+@media screen and (max-width: 44.9375em) {
+  .hero-container {
+    height: 250px;
+  }
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  z-index: 2;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin: 0;
+  opacity: 0.95;
+}
+
+@media screen and (max-width: 60em) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+/* Gradient accents on header */
+.md-header {
+  background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+}
+
+/* Gradient for primary buttons and links */
+.md-button--primary {
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  border: none;
+}
+
+.md-button--primary:hover {
+  background: linear-gradient(135deg, var(--gradient-end) 0%, var(--gradient-start) 100%);
+}
+
+/* Enhance link colors with gradient theme */
+.md-typeset a {
+  color: var(--gradient-start);
+}
+
+[data-md-color-scheme="slate"] .md-typeset a {
+  color: var(--gradient-accent);
+}
+
+.md-typeset a:hover {
+  color: var(--gradient-end);
+}
+
+/* Gradient for navigation tabs */
+.md-tabs {
+  background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+}
+
+/* Card styling for blog posts */
+.md-typeset .blog-card {
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  background: var(--hero-overlay);
+  border-left: 4px solid var(--gradient-start);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.md-typeset .blog-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+/* Contact form styling */
+.contact-form {
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid var(--gradient-start);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+  background: transparent;
+  color: inherit;
+}
+
+[data-md-color-scheme="slate"] .contact-form input,
+[data-md-color-scheme="slate"] .contact-form textarea {
+  border-color: var(--gradient-accent);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--gradient-end);
+  box-shadow: 0 0 0 2px var(--hero-overlay);
+}
+
+.contact-form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+  color: var(--gradient-start);
+}
+
+[data-md-color-scheme="slate"] .contact-form label {
+  color: var(--gradient-accent);
+}
+
+.contact-form button {
+  margin-top: 1rem;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, var(--gradient-end) 0%, var(--gradient-start) 100%);
+}
+
+/* Accessibility improvements */
+.md-skip {
+  background-color: var(--gradient-start);
+}
+
+/* Focus indicators for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid var(--gradient-accent);
+  outline-offset: 2px;
+}
+
+/* Ensure sufficient contrast for text */
+.md-typeset {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Responsive images */
+.md-typeset img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Blog post metadata styling */
+.post-meta {
+  color: var(--gradient-start);
+  font-size: 0.9rem;
+  margin: 1rem 0;
+}
+
+[data-md-color-scheme="slate"] .post-meta {
+  color: var(--gradient-accent);
+}
+
+/* Improve readability */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* Make sure headings are visible in dark mode */
+[data-md-color-scheme="slate"] .md-typeset h1,
+[data-md-color-scheme="slate"] .md-typeset h2,
+[data-md-color-scheme="slate"] .md-typeset h3 {
+  background: linear-gradient(135deg, var(--gradient-accent) 0%, var(--gradient-end) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

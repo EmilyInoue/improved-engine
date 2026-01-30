@@ -1,0 +1,136 @@
+site_name: Improved Engine Blog
+site_description: A responsive blog site with accessibility features
+site_author: Emily Inoue
+site_url: https://emilyinoue.github.io/improved-engine/
+
+# Repository
+repo_name: EmilyInoue/improved-engine
+repo_url: https://github.com/EmilyInoue/improved-engine
+
+# Theme configuration
+theme:
+  name: material
+  features:
+    # Navigation
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    
+    # Search
+    - search.suggest
+    - search.highlight
+    - search.share
+    
+    # Content
+    - content.code.copy
+    - content.action.edit
+    
+    # Accessibility and responsiveness
+    - toc.follow
+  
+  # Color scheme for light/dark mode
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
+  font:
+    text: Roboto
+    code: Roboto Mono
+  
+  # Favicon and logo
+  icon:
+    logo: material/web
+
+# Plugins
+plugins:
+  - search
+  - blog:
+      blog_dir: blog
+      post_url_format: "{slug}"
+      post_readtime: true
+
+# Extra CSS
+extra_css:
+  - stylesheets/extra.css
+
+# Extra JavaScript
+extra_javascript:
+  - javascripts/extra.js
+
+# Navigation
+nav:
+  - Home: index.md
+  - Blog: 
+    - blog/index.md
+  - Contact: contact.md
+
+# Markdown extensions for better formatting and accessibility
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 3
+  
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Additional configuration
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/EmilyInoue/improved-engine
+      name: GitHub Repository
+  
+  # Analytics (optional - can be configured later)
+  # analytics:
+  #   provider: google
+  #   property: G-XXXXXXXXXX
+
+# Copyright
+copyright: Copyright &copy; 2026 Emily Inoue
