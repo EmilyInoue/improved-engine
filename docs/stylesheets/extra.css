@@ -239,6 +239,7 @@
 .md-typeset h1,
 .md-typeset h2,
 .md-typeset h3 {
+  color: var(--gradient-start);
   background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -246,12 +247,33 @@
   font-weight: 700;
 }
 
+/* Fallback for browsers that don't support background-clip */
+@supports not (background-clip: text) or not (-webkit-background-clip: text) {
+  .md-typeset h1,
+  .md-typeset h2,
+  .md-typeset h3 {
+    color: var(--gradient-start);
+    -webkit-text-fill-color: initial;
+  }
+}
+
 /* Make sure headings are visible in dark mode */
 [data-md-color-scheme="slate"] .md-typeset h1,
 [data-md-color-scheme="slate"] .md-typeset h2,
 [data-md-color-scheme="slate"] .md-typeset h3 {
+  color: var(--gradient-accent);
   background: linear-gradient(135deg, var(--gradient-accent) 0%, var(--gradient-end) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Fallback for dark mode */
+@supports not (background-clip: text) or not (-webkit-background-clip: text) {
+  [data-md-color-scheme="slate"] .md-typeset h1,
+  [data-md-color-scheme="slate"] .md-typeset h2,
+  [data-md-color-scheme="slate"] .md-typeset h3 {
+    color: var(--gradient-accent);
+    -webkit-text-fill-color: initial;
+  }
 }

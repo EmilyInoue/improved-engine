@@ -13,7 +13,7 @@
 
 Have questions, feedback, or just want to say hello? We're here to help! Fill out the form below and we'll get back to you as soon as possible.
 
-<form class="contact-form" aria-label="Contact form">
+<form class="contact-form" method="post" aria-label="Contact form">
   <div>
     <label for="name">Name *</label>
     <input 
